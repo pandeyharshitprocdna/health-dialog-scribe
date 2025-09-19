@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Medical GenAI Design System - Soft, professional healthcare theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Core medical theme colors - Light blue background */
+    --background: 210 100% 97%;
+    --foreground: 215 35% 20%;
+
+    /* Card system - clean medical cards with better contrast */
+    --card: 0 0% 100%;
+    --card-foreground: 215 35% 20%;
+    --card-hover: 210 60% 96%;
+
+    /* Medical UI elements */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 35% 20%;
+
+    /* Rich medical blue primary system */
+    --primary: 213 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 213 100% 95%;
+
+    /* Persona library heading color - darker than primary */
+    --persona-heading: 213 100% 45%;
+
+    /* Enhanced secondary system */
+    --secondary: 210 60% 96%;
+    --secondary-foreground: 215 35% 20%;
+
+    /* Rich medical grays */
+    --muted: 210 50% 96%;
+    --muted-foreground: 215 25% 40%;
+
+    /* Vibrant medical mint accent */
+    --accent: 152 85% 75%;
+    --accent-foreground: 152 60% 15%;
+    --accent-soft: 152 70% 95%;
+
+    /* Clinical red for alerts */
+    --destructive: 0 90% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Enhanced borders and inputs */
+    --border: 214 40% 88%;
+    --input: 214 40% 88%;
+    --ring: 213 100% 60%;
+
+    /* Hover states */
+    --hover-accent: 210 100% 85%;
+    --hover-destructive: 0 84% 37%;
+
+    /* Rich medical gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(213 100% 60%), hsl(213 100% 70%));
+    --gradient-soft: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 60% 96%));
+    --gradient-accent: linear-gradient(135deg, hsl(152 85% 75%), hsl(152 85% 85%));
+
+    /* Enhanced professional shadows */
+    --shadow-card: 0 2px 8px 0 hsl(213 100% 60% / 0.15), 0 1px 3px -1px hsl(213 100% 60% / 0.1);
+    --shadow-hover: 0 8px 25px -5px hsl(213 100% 60% / 0.2), 0 4px 12px -4px hsl(213 100% 60% / 0.15);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Keep basic dark mode but focus on light theme */
+    --background: 215 28% 17%;
+    --foreground: 210 40% 98%;
+    --card: 215 28% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 28% 17%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 213 94% 68%;
+    --primary-foreground: 215 28% 17%;
+    --secondary: 215 30% 22%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 30% 22%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 152 76% 85%;
+    --accent-foreground: 152 44% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 30% 22%;
+    --input: 215 30% 22%;
+    --ring: 213 94% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  /* Medical card styles - Enhanced shadows */
+  .medical-card {
+    @apply bg-card border border-border rounded-xl shadow-[var(--shadow-card)] transition-[var(--transition-smooth)] hover:shadow-[var(--shadow-hover)] hover:bg-[hsl(var(--card-hover))];
+  }
+
+  /* Persona library heading styles */
+  .persona-library-heading {
+    @apply text-[hsl(var(--persona-heading))] font-semibold;
+  }
+
+  /* Hero button styles */
+  .btn-medical {
+    @apply bg-[var(--gradient-primary)] text-primary-foreground font-medium rounded-lg px-4 py-2 transition-[var(--transition-smooth)] hover:shadow-[var(--shadow-hover)] focus:ring-2 focus:ring-primary/50;
+  }
+
+  /* Accent button styles */
+  .btn-accent {
+    @apply bg-[var(--gradient-accent)] text-accent-foreground font-medium rounded-lg px-4 py-2 transition-[var(--transition-smooth)] hover:opacity-90 focus:ring-2 focus:ring-accent/50;
+  }
+
+  /* Chat bubble styles */
+  .chat-bubble-user {
+    @apply bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-2 ml-auto max-w-xs;
+  }
+
+  .chat-bubble-ai {
+    @apply bg-muted text-muted-foreground rounded-2xl rounded-bl-md px-4 py-2 mr-auto max-w-xs;
+  }
+
+  /* Back button hover style */
+  .btn-back-hover:hover {
+    @apply bg-[hsl(var(--hover-accent))];
+  }
+}
