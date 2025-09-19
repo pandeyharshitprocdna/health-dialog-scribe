@@ -168,16 +168,6 @@ const PersonaLibrary = () => {
         <p className="text-sm text-muted-foreground max-w-xl">Explore a curated library of medical personas............</p>
         <h3 className="pt-3 text-2xl font-semibold text-blue-900">Hi Rajan, please select persona to continue</h3>
 
-        {/* local search */}
-        <div className="mt-2 max-w-md relative">
-          <Input
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search by name, role, trait..."
-            className="pl-9 h-10 rounded-2xl border-muted/40"
-          />
-          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-        </div>
       </div>
 
       {/* Cards: responsive grid on xl, horizontal carousel on small/medium */}

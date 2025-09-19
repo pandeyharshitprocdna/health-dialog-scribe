@@ -25,7 +25,7 @@ const Navbar = ({
       {/* LEFT: Logo + Title */}
       <div className="flex items-center gap-4">
         <img
-          src="../static/proclogo.png"
+          src="https://i.ibb.co/6RQsLgFL/Proc-DNA-color-1-removebg-preview.png"
           alt="ProcDNA Logo"
           className="h-[48px] w-auto object-contain mix-blend-multiply"
         />
